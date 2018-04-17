@@ -1,0 +1,24 @@
+<package>
+  <name>amacal_mapping_evaluation</name>
+  <version>1.0.0</version>
+  <description>
+    This package provides configuration and launch files for
+    evaluating different mapping approaches on AMaCal datasets.
+  </description>
+  <maintainer email="juraj.orsulic@fer.hr">Juraj Oršulić</maintainer>
+    <maintainer email="damjan.miklic@fer.hr">Damjan Miklic</maintainer>
+  <author>Juraj Oršulić</author>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend></build_depend>
+
+  <!--run_depend>kalibr</run_depend-->
+  <!--<run_depend>rovio</run_depend>
+  <run_depend>gmapping</run_depend>
+  <run_depend>cartographer</run_depend>-->
+  <run_depend>amacal_konzum_data_logging</run_depend>
+</package>
+
+

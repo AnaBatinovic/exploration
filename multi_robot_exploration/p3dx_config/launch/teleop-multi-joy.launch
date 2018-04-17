@@ -1,0 +1,51 @@
+<launch>
+
+  <arg name="robot_name1" default="$(env ROBOT_NAME1)"/>
+  <arg name="robot_name2" default="$(env ROBOT_NAME2)"/>
+
+  <!-- Run all nodes in the robot_name namespace -->
+  <!-- This is a pain for single robot systems -->
+  <!-- But saves a lot of headaches in multi-robot setups -->
+
+  <group ns="$(arg robot_name1)">
+    <!-- run a joy node to get input from the joystick -->
+    <node pkg="joy" type="joy_node" name="f710">
+    <param name= "dev" type="string" value="/dev/input/js1"/>
+    </node>
+
+    <!-- Run the teleop node to translate joy messages to twist messages -->
+    <!-- This setup is adapted for the Logitech f710 -->
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop">
+      <param name="enable_button" value="6"/>
+      <param name="axis_linear" value="1"/>
+      <param name="axis_angular" value="2"/>
+      <param name="scale_linear" value="2" />
+      <param name="scale_angular" value="2" />
+      <remap from="cmd_vel" to="cmd_vel_orig"/>
+    </node>
+
+    <node pkg="p3dx_config" type="republish_velocity.py" name="republish_velocity"/>
+  </group>
+
+<!--second robot -->
+    <group ns="$(arg robot_name2)">
+      <!-- run a joy node to get input from the joystick -->
+      <node pkg="joy" type="joy_node" name="f710">
+      <param name= "dev" type="string" value="/dev/input/js2"/>
+      </node>
+
+      <!-- Run the teleop node to translate joy messages to twist messages -->
+      <!-- This setup is adapted for the Logitech f710 -->
+      <node pkg="teleop_twist_joy" type="teleop_node" name="teleop">
+        <param name="enable_button" value="6"/>
+        <param name="axis_linear" value="1"/>
+        <param name="axis_angular" value="2"/>
+        <param name="scale_linear" value="2" />
+        <param name="scale_angular" value="2" />
+        <remap from="cmd_vel" to="cmd_vel_orig"/>
+      </node>
+
+      <node pkg="p3dx_config" type="republish_velocity.py" name="republish_velocity"/>
+    </group>
+
+</launch>

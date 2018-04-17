@@ -1,0 +1,12 @@
+<launch>
+  <arg name="robot_type" value="$(env ROBOT_TYPE)" />
+  <arg name="bag" default="" />
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="-start_trajectory_with_default_topics=false
+          -configuration_directory $(find amacal_mapping_evaluation)/config
+          -configuration_basename $(arg robot_type)-cartographer.lua"
+      output="screen">
+  </node>
+
+</launch>

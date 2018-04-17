@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="robot_name0" default="$(env ROBOT_NAME0)"/>
+
+
+  <!-- Run all nodes in the robot_name namespace -->
+  <!-- This is a pain for single robot systems -->
+  <!-- But saves a lot of headaches in multi-robot setups -->
+
+  <group ns="$(arg robot_name0)">
+      <!-- Keyboard teleoperation -->
+      <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop"/>
+
+  </group>
+
+
+</launch>

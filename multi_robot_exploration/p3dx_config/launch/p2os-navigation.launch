@@ -1,0 +1,15 @@
+<launch>
+    <arg name="robot_name" default="pioneer"/>    
+    <arg name="map_file" default="map.yaml"/>
+
+    <!-- Launch AMCL localization -->
+    <include file="$(find p3dx_config)/launch/p2os-amcl.launch">
+		<arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="map_file" value="$(arg map_file)"/>
+    </include>
+
+    <!-- Launch navigation -->
+    <include file="$(find p3dx_config)/launch/navigation.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>   
+</launch>
