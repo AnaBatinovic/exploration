@@ -20,7 +20,7 @@
 
   <node name="cartographer_grpc_server" pkg="cartographer_ros"
       type="cartographer_grpc_server.sh" args="
-          -configuration_directory $(find multi_robot_exploration)/configuration_files
+          -configuration_directory $(find multi_robot_exploration)/config
           -configuration_basename cloud.lua">
   </node>
 
