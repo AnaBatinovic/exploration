@@ -1,4 +1,4 @@
--- Copyright 2018 The Cartographer Authors
+-- Copyright 2016 The Cartographer Authors
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 include "map_builder_server.lua"
 
 MAP_BUILDER_SERVER.map_builder.use_trajectory_builder_2d = true
-MAP_BUILDER_SERVER.server_address = "10.129.51.160:55555"
 
 return MAP_BUILDER_SERVER
+
+

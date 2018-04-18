@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.0)
-project(cartographer_superbuild)
+project(exploration)
 set(CMAKE_CXX_STANDARD 11)
 
 # catkin sets this to "on" by default, which causes linking problems
@@ -30,3 +30,5 @@ add_subdirectory(cartographer_ros/cartographer_rviz)
 add_subdirectory(cartographer_ros/docs)
 add_subdirectory(rrt_exploration)
 add_subdirectory(nimbro_network/nimbro_topic_transport)
+add_subdirectory(multi_robot_exploration)
+

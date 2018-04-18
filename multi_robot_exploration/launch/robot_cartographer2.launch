@@ -1,0 +1,24 @@
+<launch>
+  <arg name="robot_name" value="$(env ROBOT_NAME)"/>
+  <arg name="bag" default="" />
+
+
+ <!--<node name="cartographer_grpc_server" pkg="cartographer_ros"
+      type="cartographer_grpc_server.sh" args="
+          -configuration_directory $(find multi_robot_exploration)/config
+          -configuration_basename robot.lua">	
+
+  </node>-->
+
+ <node name="cartographer_grpc_node" pkg="cartographer_ros"
+      type="cartographer_grpc_node" args="
+          -configuration_directory $(find multi_robot_exploration)/config
+          -configuration_basename pioneer-cartographer.lua"
+      output="screen">
+    <remap from="odom" to="$(arg robot_name)/pose" />
+    <remap from="scan" to="$(arg robot_name)/scan" />
+  </node>
+
+
+</launch>
+

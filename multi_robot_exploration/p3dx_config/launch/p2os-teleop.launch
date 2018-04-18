@@ -1,8 +1,0 @@
-<launch>
-  <!-- Launch the driver -->
-  <include file="$(find p3dx_config)/launch/p2os.launch"/>
-
-  <!-- Launch teleoperation -->
-  <include file="$(find p3dx_config)/launch/teleop_f720.launch"/>
-
-</launch>

@@ -16,9 +16,7 @@
 
 <launch>
 <group>
-  <env name="ROS_MASTER_URI" value="http://localhost:11111" />
-  <env name="robot_name" value="$(env ROBOT_NAME)"/>
-  <param name="/use_sim_time" value="true" />
+  <arg name="robot_name" value="$(env ROBOT_NAME)"/>
 
   <node name="cartographer_grpc_server" pkg="cartographer_ros"
       type="cartographer_grpc_server.sh" args="
@@ -26,15 +24,16 @@
           -configuration_basename cloud.lua">
   </node>
 
+
   <node name="cartographer_grpc_node" pkg="cartographer_ros"
       type="cartographer_grpc_node" args="
-          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_directory $(find multi_robot_exploration)/config
           -configuration_basename pioneer-cartographer.lua
-          -server_address localhost:55555"
+          -server_address localhost:55555
+          -start_trajectory_with_default_topics=false"
       output="screen">
     <remap from="odom" to="$(arg robot_name)/pose" />
     <remap from="scan" to="$(arg robot_name)/scan" />
   </node>
-
 </group>
 </launch>
