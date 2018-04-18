@@ -49,3 +49,5 @@ add_executable(local_rrt_detector src/local_rrt_detector.cpp src/functions.cpp s
 target_link_libraries(local_rrt_detector ${catkin_LIBRARIES})
 add_dependencies(global_rrt_detector ${${PROJECT_NAME}_EXPORTED_TARGETS})
 add_dependencies(local_rrt_detector ${${PROJECT_NAME}_EXPORTED_TARGETS})
+add_dependencies(global_rrt_detector ${catkin_EXPORTED_TARGETS})
+add_dependencies(local_rrt_detector ${catkin_EXPORTED_TARGETS})
