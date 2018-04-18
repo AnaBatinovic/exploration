@@ -1,6 +1,5 @@
 <launch>
     <arg name="robot_name" default="$(env ROBOT_NAME)"/> 
-    <arg name="map_file" default="$(find p3dx_config)/maps/map.yaml"/> 
     <param name="tf_prefix" value="$(env ROBOT_NAME)" />  
 
     <!-- Launch navigation -->
