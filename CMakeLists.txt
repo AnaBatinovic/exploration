@@ -13,12 +13,14 @@ find_package(GMock REQUIRED)
 set(CARTOGRAPHER_CONFIGURATION_FILES_DIRECTORY "${CMAKE_SOURCE_DIR}/cartographer/configuration_files"
   CACHE PATH ".lua config file directory")
 
-# add the libcartographer directory
-add_subdirectory(cartographer)
-
 # point the catkin packages to the special Findcartographer.cmake module which is run when find_package(cartographer)
 # is called; this module just checks if libcartographer is in the build tree at this point
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+
+add_subdirectory(async_grpc)
+
+# add the libcartographer directory
+add_subdirectory(cartographer)
 
 # add catkin packages
 add_subdirectory(cartographer_ros/cartographer_ros_msgs)
