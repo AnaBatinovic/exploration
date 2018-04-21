@@ -16,19 +16,17 @@
 -->
 
 <package format="2">
-  <name>cartographer</name>
-  <version>0.3.0</version>
+  <name>async_grpc</name>
+  <version>0.0.0</version>
   <description>
-    Cartographer is a system that provides real-time simultaneous localization
-    and mapping (SLAM) in 2D and 3D across multiple platforms and sensor
-    configurations.
+    async_grpc
   </description>
   <maintainer email="google-cartographer@googlegroups.com">
     The Cartographer Authors
   </maintainer>
   <license>Apache 2.0</license>
 
-  <url>https://github.com/googlecartographer/cartographer</url>
+  <url>https://github.com/googlecartographer/async_grpc</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
@@ -36,14 +34,9 @@
   <build_depend>google-mock</build_depend>
   <build_depend>python-sphinx</build_depend>
 
-  <depend>async_grpc</depend>
   <depend>boost</depend>
-  <depend>ceres-solver</depend>
-  <depend>eigen</depend>
-  <depend>libcairo2-dev</depend>
   <depend>libgflags-dev</depend>
   <depend>libgoogle-glog-dev</depend>
-  <depend>lua5.2-dev</depend>
   <depend>protobuf-dev</depend>
 
   <export>
