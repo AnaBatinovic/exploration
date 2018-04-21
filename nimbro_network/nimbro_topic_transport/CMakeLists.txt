@@ -122,7 +122,8 @@ target_link_libraries(action_proxy
 )
 
 # GUI
-find_package(Qt4 REQUIRED)
+find_package(Qt4)
+if(Qt4_FOUND)
 include(${QT_USE_FILE})
 
 qt4_wrap_cpp(MOC_SRCS
@@ -164,6 +165,7 @@ target_link_libraries(bandwidth_gui
 	${QT_LIBRARIES}
 	yaml-cpp
 )
+endif()
 
 # Tests
 if(catch_ros_FOUND)
