@@ -182,6 +182,7 @@ if(${BUILD_GRPC})
   endif()
 endif()
 
+set(ALL_TESTS "")
 foreach(ABS_FIL ${ALL_TESTS})
   file(RELATIVE_PATH REL_FIL ${PROJECT_SOURCE_DIR} ${ABS_FIL})
   get_filename_component(DIR ${REL_FIL} DIRECTORY)
