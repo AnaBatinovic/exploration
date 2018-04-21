@@ -92,6 +92,7 @@ set_source_files_properties(${ALL_PROTO_SRCS} ${ALL_PROTO_HDRS} PROPERTIES GENER
 
 add_library(${PROJECT_NAME} ${ALL_LIBRARY_HDRS} ${ALL_LIBRARY_SRCS} ${ALL_PROTO_HDRS} ${ALL_PROTO_SRCS})
 
+set(ALL_TESTS "")
 foreach(RELATIVEPATH ${ALL_TESTS})
   get_filename_component(DIR ${RELATIVEPATH} DIRECTORY)
   get_filename_component(FILENAME ${RELATIVEPATH} NAME_WE)
